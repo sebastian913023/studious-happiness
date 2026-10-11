@@ -1,0 +1,11 @@
+services:
+  mark-intelligence:
+    build: .
+    ports: ["5000:5000"]
+    environment:
+      - DATABASE_PATH=/data/data.db
+    volumes:
+      - mark-data:/data
+    restart: unless-stopped
+volumes:
+  mark-data:
